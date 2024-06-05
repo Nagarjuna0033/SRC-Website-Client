@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/SRC-Website-Client/static/css/main.b046c558.css",
-    "main.js": "/SRC-Website-Client/static/js/main.a3194f20.js",
-    "static/js/453.8ab44547.chunk.js": "/SRC-Website-Client/static/js/453.8ab44547.chunk.js",
+    "main.css": "/SRC-Website-Client/static/css/main.f9a82101.css",
+    "main.js": "/SRC-Website-Client/static/js/main.4c213a4a.js",
+    "static/js/453.d855a71b.chunk.js": "/SRC-Website-Client/static/js/453.d855a71b.chunk.js",
     "static/media/carousal-1.jpg": "/SRC-Website-Client/static/media/carousal-1.7204d8c710aa72c1e54c.jpg",
     "static/media/carousal-2.jpg": "/SRC-Website-Client/static/media/carousal-2.588b271552bfbbc7ec29.jpg",
     "static/media/ui-ux.avif": "/SRC-Website-Client/static/media/ui-ux.bbfa568bfa50e89c345c.avif",
     "index.html": "/SRC-Website-Client/index.html",
-    "static/media/chevron-right-solid.svg": "/SRC-Website-Client/static/media/chevron-right-solid.0849714052afd54cdb917030cae03a01.svg",
-    "main.b046c558.css.map": "/SRC-Website-Client/static/css/main.b046c558.css.map",
-    "main.a3194f20.js.map": "/SRC-Website-Client/static/js/main.a3194f20.js.map",
-    "453.8ab44547.chunk.js.map": "/SRC-Website-Client/static/js/453.8ab44547.chunk.js.map"
+    "main.f9a82101.css.map": "/SRC-Website-Client/static/css/main.f9a82101.css.map",
+    "main.4c213a4a.js.map": "/SRC-Website-Client/static/js/main.4c213a4a.js.map",
+    "453.d855a71b.chunk.js.map": "/SRC-Website-Client/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b046c558.css",
-    "static/js/main.a3194f20.js"
+    "static/css/main.f9a82101.css",
+    "static/js/main.4c213a4a.js"
   ]
 }
