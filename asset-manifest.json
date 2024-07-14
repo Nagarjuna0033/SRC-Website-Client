@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/SRC-Website-Client/static/css/main.68fa0677.css",
-    "main.js": "/SRC-Website-Client/static/js/main.2b6af83f.js",
+    "main.css": "/SRC-Website-Client/static/css/main.863dcd2e.css",
+    "main.js": "/SRC-Website-Client/static/js/main.1bf87b4e.js",
     "static/js/453.d855a71b.chunk.js": "/SRC-Website-Client/static/js/453.d855a71b.chunk.js",
     "static/media/carousal-1.jpg": "/SRC-Website-Client/static/media/carousal-1.7204d8c710aa72c1e54c.jpg",
     "static/media/carousal-2.jpg": "/SRC-Website-Client/static/media/carousal-2.588b271552bfbbc7ec29.jpg",
     "static/media/ui-ux.avif": "/SRC-Website-Client/static/media/ui-ux.bbfa568bfa50e89c345c.avif",
     "index.html": "/SRC-Website-Client/index.html",
-    "main.68fa0677.css.map": "/SRC-Website-Client/static/css/main.68fa0677.css.map",
-    "main.2b6af83f.js.map": "/SRC-Website-Client/static/js/main.2b6af83f.js.map",
+    "main.863dcd2e.css.map": "/SRC-Website-Client/static/css/main.863dcd2e.css.map",
+    "main.1bf87b4e.js.map": "/SRC-Website-Client/static/js/main.1bf87b4e.js.map",
     "453.d855a71b.chunk.js.map": "/SRC-Website-Client/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68fa0677.css",
-    "static/js/main.2b6af83f.js"
+    "static/css/main.863dcd2e.css",
+    "static/js/main.1bf87b4e.js"
   ]
 }
