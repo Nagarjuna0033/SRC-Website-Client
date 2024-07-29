@@ -172,23 +172,7 @@ body {
 
 /* Carousal styles */
 
-.thumbs {
-  display: none !important;
-}
-.control-arrow,
-.control-next {
-  display: none !important;
-}
-
-.carousel .slide-holder {
-  width: 100%;
-  height: 450px;
-  transition: all 0.5s ease-in-out;
-  display: grid;
-  place-items: center;
-}
-
-.carousel .slide-holder::after {
+.carousel::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -197,58 +181,53 @@ body {
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
-div .images {
-  height: 25rem;
-}
-
-.carousel .slide-holder:hover {
-  border-image: fill 0.01 linear-gradient(rgba(255, 255, 255, 0.067), black);
-  filter: grayscale(0);
-}
-
-.carousel .slide-holder:hover::after {
-  opacity: 1;
-  inset: 20px;
+.carousel-item {
+  position: relative;
 }
 
 .text-container {
   text-align: center;
   opacity: 0;
   transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 0rem;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .text-container > h2 {
-  color: white;
-  font-size: 25px;
+  /* color: white; */
+  font-size: 1.9rem;
   text-align: center;
-  margin: 10px;
 }
 
 .text-container > p {
-  color: rgb(252, 250, 250);
+  /* color: rgb(252, 250, 250); */
+  font-size: 1.3rem;
+  color: black;
+
   font-size: 18px;
   text-align-last: center;
   font-weight: bolder;
 }
 
-.carousel .slide-holder:hover .text-container {
+.carousel:hover .text-container {
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  background-color: transparent;
   opacity: 1;
-}
-.dot {
-  display: none !important;
-}
-
-.control-dots .dot {
-  z-index: -500 !important;
-}
-.control-arrow {
-  z-index: -999 !important;
+  color: black;
 }
 
 /* different */
 
 .carousal-content {
-  padding: 2rem;
+  padding: 1rem;
   color: white;
   text-align: justify;
 }

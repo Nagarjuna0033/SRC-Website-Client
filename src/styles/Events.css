@@ -178,6 +178,7 @@
   .event-container {
     flex-direction: column;
     margin: 0.9rem;
+    margin-top: 3rem;
   }
 
   .event-details {

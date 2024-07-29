@@ -190,17 +190,27 @@ export default function UserProfile() {
       setIcon(!icon);
     }
   };
-
+  const isValidUrl = (string) => {
+    try {
+      new URL(string);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  };
+  const getImageSrc = () => {
+    if (userInfo && userInfo.image) {
+      return isValidUrl(userInfo.image)
+        ? userInfo.image
+        : `data:image/jpeg;base64,${userInfo.image}`; // Assuming binary data is base64 encoded
+    }
+  };
   return (
     <>
       <div className="profile-container">
         <div className="profile-name-img">
           <div className="profile-wrapper">
-            <img
-              src={userInfo && "data:image/jpeg;base64," + userInfo.image}
-              alt=""
-              srcset=""
-            />
+            <img src={userInfo && getImageSrc()} alt="" srcset="" />
             <div className="edit-profile-pic">
               {!profileFormik.values.image ? (
                 <svg
@@ -225,7 +235,7 @@ export default function UserProfile() {
             <button
               className="reset-password-btn"
               onClick={() => {
-                navigate("/reset/password");
+                navigate("/Auth/reset/password");
               }}
             >
               Reset Password

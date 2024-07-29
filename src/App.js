@@ -94,9 +94,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Signin" element={<Signin />} />
+            <Route path="/Auth/Signin" element={<Signin />} />
             <Route path="/Details" element={<UserDetails />} />
-            <Route path="/Login" element={<Login />} />
+            <Route path="/Auth/Login" element={<Login />} />
             {/* Admin Routes */}
             <Route
               path="/Admin"
@@ -120,7 +120,7 @@ function App() {
               <Route path="contact-forum" element={<ContactForum />} />
               <Route path="feedback" element={<Feedback />} />
             </Route>
-            <Route path="/forgot/password" element={<ForgotPassword />} />
+            <Route path="/Auth/forgot/password" element={<ForgotPassword />} />
             <Route path="/Projects" element={<Projects />} />
             <Route path="/Events" element={<Events />} />
             <Route path="/Events/:eventName" element={<EventInfo />} />
@@ -136,11 +136,11 @@ function App() {
             <Route path="/About" element={<About />} />
             <Route path="/user/verify/:authToken" element={<UserVerify />} />
             <Route
-              path="/reset/password"
+              path="/Auth/reset/password"
               element={logged ? <ResetPassword /> : <Error />}
             />
             <Route
-              path="/reset/password/:authToken"
+              path="/Auth/reset/password/:authToken"
               element={<ResetPassword />}
             />
             <Route

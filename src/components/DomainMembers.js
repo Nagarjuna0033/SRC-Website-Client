@@ -33,7 +33,19 @@ export default function DomainMembers() {
       console.log(e);
     }
   };
-
+  const isValidUrl = (string) => {
+    try {
+      new URL(string);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  };
+  const getImageSrc = (image) => {
+    if (image) {
+      return isValidUrl(image) ? image : `data:image/jpeg;base64,${image}`; // Assuming binary data is base64 encoded
+    }
+  };
   // const extendedDetails = coordinators && [...coordinators, ...coordinators];
 
   return (
@@ -58,7 +70,7 @@ export default function DomainMembers() {
                 <>
                   <div className="official-element">
                     <img
-                      src={"data:image/jpeg;base64," + item.image}
+                      src={getImageSrc(item.image)}
                       alt=""
                       className="official-image"
                     />

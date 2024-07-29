@@ -4,6 +4,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { FormControlLabel, Checkbox } from "@mui/material";
 import { setSnackBar } from "../../features/snackbar/snackbar";
+import CircularProgress from "@mui/material/CircularProgress";
 import {
   Dialog,
   DialogTitle,
@@ -19,8 +20,8 @@ export default function CrFeedback() {
   // Creating Hooks
   const dispatch = useDispatch();
   const [copen, setCOpen] = React.useState(false);
-  const [edit, setEdit] = useState({ check: false, event: "" });
   const [cancel, setCancel] = useState(false);
+  const [loader,setLoader]=useState(false);
   const handleCClose = () => setCOpen(false);
 
   // Function to clear inputs
@@ -68,14 +69,13 @@ export default function CrFeedback() {
   const handelSubmit = (e) => {
     e.preventDefault();
     setCOpen(true);
-
-    // postFeedback(formik.values);
   };
 
   // Function to create contact  forum
 
   const postFeedback = async (e) => {
     try {
+      setLoader(true);
       const feedbackData = {
         id: formik.values.id,
         batch: formik.values.batch,
@@ -95,7 +95,9 @@ export default function CrFeedback() {
       );
 
       formik.resetForm();
+      setLoader(false);
     } catch (e) {
+      setLoader(false);
       dispatch(
         setSnackBar({ message: "Error in sending Feedback", variant: "error" })
       );
@@ -209,7 +211,7 @@ export default function CrFeedback() {
                   <input
                     type="text"
                     name="faculty"
-                    placeholder="Teacher"
+                    placeholder="Faculty"
                     required
                     onChange={(e) => handlePeriodChange(index, e)}
                     value={detail.faculty}
@@ -247,8 +249,16 @@ export default function CrFeedback() {
                 onChange={formik.handleChange}
                 value={formik.values.remarks}
               ></textarea>
-              <button type="submit" className="submit-message">
-                Send Feedback
+              <button
+                className="submit-message"
+                type="submit"
+                disabled={loader}
+              >
+                {loader ? (
+                  <CircularProgress size={27} sx={{ color: "#022368" }} />
+                ) : (
+                  "Send Feedback"
+                )}
               </button>
             </form>
           </div>

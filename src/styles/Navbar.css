@@ -188,7 +188,7 @@
   align-items: self-start;
 }
 
-#user-menu:hover + #user-options {
+.user-menu:hover + #user-options {
   display: block;
 }
 #user-options:hover {

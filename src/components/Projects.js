@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import phone from "../assets/images/contact-image-3.jpg";
 import Accordion from "@mui/material/Accordion";
+import { Skeleton } from "@mui/material";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import axios from "axios";
@@ -47,15 +48,6 @@ export default function Projects() {
       console.log(e);
     }
   };
-
-  // contributors: [];
-  // createdAt: "2024-07-15T15:45:54.642Z";
-  // demoLink: "this is demo link";
-  // description: "this is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is desc";
-  // domainId: "66941ce2c02f158af0de725f";
-  // githubLink: "his is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is descthis is desct";
-  // name: "this is name";
-  // updatedAt: "2024-07-16T15:31:30.268Z";
   const options = {
     year: "numeric",
     month: "long",
@@ -74,8 +66,21 @@ export default function Projects() {
           gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
         }}
       >
-        {projects ? (
-          projects.map((e, i) => {
+        {projects ? (projects.length===0?(
+          <div
+            style={{
+              color: "white",
+              fontSize: "2.5rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "1rem",
+            }}
+          >
+            No Projects found
+          </div>
+          ):(projects.map((e, i) => {
             return (
               <div style={{ margin: "1.7rem" }}>
                 <Card sx={{ maxWidth: 345 }}>
@@ -161,21 +166,48 @@ export default function Projects() {
                 </Card>
               </div>
             );
-          })
+          }))
         ) : (
-          <div
-            style={{
-              color: "white",
-              fontSize: "2.5rem",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              marginTop: "1rem",
-            }}
-          >
-            No Projects found
-          </div>
+          
+          Array.from({ length: 3 }).map((_, index) => {
+            return (
+                <div >
+                  <div style={{marginTop:"2rem"}}>
+                    <Skeleton
+                      variant="rectangular"
+                      width={"22rem"}
+                      height={"4rem"}
+                      sx={{
+                        backgroundColor: "white",
+                        // borderRadius: "0.3rem",
+                      }}
+                    />
+                  </div>
+                  <div >
+                    <Skeleton
+                      variant="rectangular"
+                      width={"22rem"}
+                      height={"14rem"}
+                      sx={{
+                        backgroundColor: "gray",
+                        // borderRadius: "0.3rem",
+                      }}
+                    />
+                  </div>
+                  <div >
+                    <Skeleton
+                      variant="rectangular"
+                      width={"22rem"}
+                      height={"4rem"}
+                      sx={{
+                        backgroundColor: "white",
+                        // borderRadius: "0.3rem",
+                      }}
+                    />
+                  </div>
+                </div>
+            );
+          })
         )}
       </div>
     </>

@@ -208,14 +208,14 @@ export default function Signin() {
             )}
           </div>
 
-          <button type="submit" className="password">
+          <button type="submit" className="submit-message" disabled={loader}>
             {loader ? (
               <CircularProgress size={27} sx={{ color: "#022368" }} />
             ) : (
               "Sign up"
             )}
           </button>
-          <Link to="/Login" id="already-account">
+          <Link to="/Auth/Login" id="already-account">
             Already have an account?
           </Link>
         </form>
