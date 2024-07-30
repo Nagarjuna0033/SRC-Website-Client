@@ -48,6 +48,7 @@ export default function DomainForm() {
     initialValues: {
       name: "",
       description: "",
+      image: "",
     },
     validateOnMount: true,
 
@@ -351,20 +352,25 @@ export default function DomainForm() {
             <form onSubmit={update ? updateDomain : handleSubmit}>
               <input
                 type="text"
-                id="domain-name"
                 required
                 value={formik.values.name}
                 name="name"
                 placeholder="Domain Name"
                 onChange={formik.handleChange}
               />
-
+              <input
+                type="text"
+                required
+                value={formik.values.image}
+                name="image"
+                placeholder="Domain Name"
+                onChange={formik.handleChange}
+              />
               <textarea
                 style={{ resize: "none" }}
                 placeholder="Description about Domain"
                 value={formik.values.description}
                 name="description"
-                id="domain-desc"
                 required
                 cols={30}
                 rows={7}
