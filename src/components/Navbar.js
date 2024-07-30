@@ -5,7 +5,6 @@ import Headroom from "react-headroom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { loggedStatus } from "../features/user/user";
-import { Avatar } from "@mui/material";
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,7 +17,6 @@ export default function Navbar() {
   };
   const location = useLocation();
   useEffect(() => {}, [location]);
-
   const links = document.querySelectorAll(".items");
   links.forEach((e) => {
     e.addEventListener("click", () => {
@@ -75,13 +73,23 @@ export default function Navbar() {
                   </svg>
                 )}
               </div>
-              <Link to="/">
-                <img
-                  src="https://media.licdn.com/dms/image/D560BAQGeX5IypKPgKA/company-logo_200_200/0/1714503367832/src_rgukt_rkvalley_logo?e=2147483647&v=beta&t=VaD731Pnd5Lt2gtyglJxyOJwUvjsOATqQCeXi6k-qS0"
-                  alt=""
-                  id="ClubLogo"
-                />
-              </Link>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "1rem",
+                }}
+              >
+                <Link to="/">
+                  <img
+                    src="https://media.licdn.com/dms/image/D560BAQGeX5IypKPgKA/company-logo_200_200/0/1714503367832/src_rgukt_rkvalley_logo?e=2147483647&v=beta&t=VaD731Pnd5Lt2gtyglJxyOJwUvjsOATqQCeXi6k-qS0"
+                    alt=""
+                    id="ClubLogo"
+                  />
+                </Link>
+                <h3 style={{ color: "white" }}>SRC</h3>
+              </div>
             </div>
             <div
               className={`menu_items ${isOpen ? "open" : "closed"}`}
@@ -133,7 +141,7 @@ export default function Navbar() {
               <Link
                 to="/Events"
                 className="items event-name-for-click"
-                id={location.pathname === "/Events" ? "click" : ""}
+                id={location.pathname.startsWith("/Events") ? "click" : ""}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -146,9 +154,15 @@ export default function Navbar() {
               </Link>
               {!useSelector((state) => state.logStatus.logged) ? (
                 <Link
-                  to="/Login"
+                  to="/Auth/Login"
                   className="items"
-                  id={location.pathname === "/Admin" ? "click" : ""}
+                  id={
+                    location.pathname === "/Auth/Login" ||
+                    location.pathname === "/Auth/Signin" ||
+                    location.pathname === "/Admin"
+                      ? "click"
+                      : ""
+                  }
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +175,16 @@ export default function Navbar() {
                 </Link>
               ) : (
                 <>
-                  <Link className="logout" id="user-menu">
+                  <Link
+                    className="logout user-menu"
+                    id={
+                      location.pathname.startsWith("/Admin") ||
+                      location.pathname.startsWith("/CR/feedback") ||
+                      location.pathname.startsWith("/profile/Arjuna")
+                        ? "click"
+                        : ""
+                    }
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"

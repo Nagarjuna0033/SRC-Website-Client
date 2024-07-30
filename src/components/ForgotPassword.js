@@ -107,7 +107,7 @@ export default function ForgotPassword() {
           ) : (
             <button className="submit-message">verify</button>
           )}
-          <Link to="/Signin" id="sign-account">
+          <Link to="/Auth/Signin" id="sign-account">
             Don't have an account?
           </Link>
         </form>

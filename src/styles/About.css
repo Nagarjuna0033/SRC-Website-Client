@@ -74,7 +74,8 @@ p {
 
 .officail-bio {
   font-size: 1rem;
-  color: grey;
+  color: black;
+  /* color: grey; */
   line-height: 1.5rem !important;
   letter-spacing: 0.1rem;
   width: 95%;
@@ -150,7 +151,8 @@ p {
 
   .official-designation {
     font-size: 0.8rem;
-    color: rgb(82, 82, 82);
+    /* color: rgb(82, 82, 82); */
+    color: black;
   }
 
   .official-details {
@@ -165,7 +167,7 @@ p {
 
   .officail-bio {
     font-size: 1rem;
-    color: grey;
+    color: black !important;
     line-height: 1.5rem !important;
     letter-spacing: 0.1rem;
     padding: 1rem !important;

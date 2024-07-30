@@ -113,7 +113,7 @@ export default function Domains() {
                   >
                     <div className="domain-element">
                       <div className="domain-image">
-                        <img src={app} alt="Domain" />
+                        <img src={ele.image && ele.image} alt="Domain" />
                       </div>
                       <div className="domain-name">
                         <h3>{ele.name}</h3>

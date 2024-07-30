@@ -65,6 +65,7 @@
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
+  color: black !important;
 }
 .news-short {
   margin-bottom: -1rem;
@@ -145,6 +146,7 @@
     flex-direction: column;
     gap: 1.5rem;
   }
+
   .news-element .news-img img {
     height: fit-content;
     max-width: 100%;
@@ -153,9 +155,7 @@
   .news-element {
     width: 100%;
   }
-  #show #modal {
-    width: 100% !important;
-  }
+
   .sub-news-container {
     overflow: scroll;
   }

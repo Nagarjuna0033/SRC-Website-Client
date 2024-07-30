@@ -182,7 +182,7 @@ export default function Login() {
               </svg>
             )}
           </div>
-          <Link to="/forgot/password">Forgot password?</Link>
+          <Link to="/Auth/forgot/password">Forgot password?</Link>
           <button type="submit" className="submit-message" disabled={loader}>
             {loader ? (
               <CircularProgress size={27} sx={{ color: "#022368" }} />
@@ -190,7 +190,7 @@ export default function Login() {
               "Login"
             )}
           </button>
-          <Link to="/Signin" id="sign-account">
+          <Link to="/Auth/Signin" id="sign-account">
             Don't have an account?
           </Link>
         </form>

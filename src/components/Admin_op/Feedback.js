@@ -1,22 +1,12 @@
 import { React, useState } from "react";
 import { useFormik } from "formik";
 import dayjs from "dayjs";
-import { useDispatch } from "react-redux";
 import { DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Skeleton } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import ListItem from "@mui/material/ListItem";
-import DeleteIcon from "@mui/icons-material/Delete";
-import IconButton from "@mui/material/IconButton";
-import { Accordion } from "@mui/material";
-import { AccordionSummary, AccordionDetails } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import EditNoteRoundedIcon from "@mui/icons-material/EditNoteRounded";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -52,6 +42,7 @@ export default function ClassDeatils() {
     setFeedbacks({ check: true, details: null });
 
     try {
+      setLoader(true);
       const res = await axios.get(
         getAllFeedbacksCollectionByFilterApi +
           `?${formik.values.year ? `year=${formik.values.year}` + "&" : ""}${
@@ -66,7 +57,9 @@ export default function ClassDeatils() {
       );
       formik.resetForm();
       setFeedbacks({ check: false, details: res.data });
+      setLoader(false);
     } catch (e) {
+      setLoader(false);
       console.log(e);
       setFeedbacks({ check: false, details: null });
     }
