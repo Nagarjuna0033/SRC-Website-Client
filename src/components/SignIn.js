@@ -100,7 +100,7 @@ export default function Signin() {
       );
       setLoader(false);
       setTimeout(() => {
-        navigate("/Login");
+        navigate("/Auth/Login");
       }, 3000);
     } catch (e) {
       console.log(e.response);
