@@ -50,7 +50,7 @@ export default function EventsDemo() {
       <section>
         <div className="events-demo">
           <div className="events">
-            <div className="event-head">Upcoming Events</div>
+            <div className="event-head">{events && events.length > 0 ? "Upcoming Events" : ""}</div>
             {events
               ? events.map((element) => {
                   if (element.isUpcoming) {
