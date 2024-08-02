@@ -126,7 +126,9 @@ export default function EventsDemo() {
           </Box>
         </Modal>
         <div className="news-container" id="news-container">
-          <div className="new-header">Latest News</div>
+          <div className="new-header">
+            {news && news.length > 0 ? "Latest News" : ""}
+          </div>
           <div
             className="sub-news-container"
             id="jump"

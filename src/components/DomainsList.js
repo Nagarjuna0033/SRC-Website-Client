@@ -100,7 +100,7 @@ export default function Domains() {
             fontWeight: "bold",
           }}
         >
-          Domains
+          {domains && domains.length > 0 ? "Domains" : ""}
         </div>
         <div id="scroll" onWheel={move} ref={containerRef}>
           {domains
