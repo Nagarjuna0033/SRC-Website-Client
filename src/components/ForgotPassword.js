@@ -3,7 +3,6 @@ import "../styles/Login.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { setSnackBar } from "../features/snackbar/snackbar";
 import { CircularProgress } from "@mui/material";

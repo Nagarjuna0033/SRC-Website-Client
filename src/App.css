@@ -352,16 +352,16 @@ body {
     display: none !important;
   }
 
-  .control-arrow {
+  /* .control-arrow {
     z-index: -999 !important;
-  }
+  } */
   .thumbs {
     display: none !important;
   }
-  .control-arrow,
+  /* .control-arrow,
   .control-next {
-    display: none !important;
-  }
+    z-index: -999 !important;
+  } */
   .domain-container {
     margin: 0.3rem;
   }

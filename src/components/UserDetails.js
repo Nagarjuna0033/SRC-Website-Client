@@ -1,7 +1,6 @@
 import { React } from "react";
 import "../styles/Login.css";
 import { useFormik } from "formik";
-import "react-toastify/dist/ReactToastify.css";
 export default function UserDetails() {
   const formik = useFormik({
     initialValues: {

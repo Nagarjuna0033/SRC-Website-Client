@@ -4,7 +4,6 @@ import "../../styles/Login.css";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
-import "react-toastify/dist/ReactToastify.css";
 
 import { useDispatch } from "react-redux";
 import { setSnackBar } from "../../features/snackbar/snackbar";

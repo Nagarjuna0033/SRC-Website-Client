@@ -1,11 +1,9 @@
 {
-  "homepage": "https://Nagarjuna0033.github.io/SRC-Website-Client",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "@mui/x-date-pickers": "^7.10.0",
@@ -27,18 +25,13 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.23.1",
     "react-scripts": "^5.0.1",
-    "react-swipeable-views": "^0.14.0",
-    "react-swipeable-views-utils": "^0.14.0",
     "react-table": "^7.8.0",
-    "react-toastify": "^10.0.5",
     "react-vertical-timeline-component": "^3.6.0",
     "redux-persist": "^6.0.0",
-    "styled-components": "^6.1.11",
-    "swiper": "^11.1.3",
-    "toastify": "^2.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
