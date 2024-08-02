@@ -8,16 +8,14 @@ export default function Testimonals() {
   );
 
   const [testimonials, setTestimonials] = useState(null);
-
+  const getAllTestimonialsApi = process.env.REACT_APP_GET_ALL_TESTIMONIALS;
   useEffect(() => {
     getAllTestimonials();
   }, []);
 
   const getAllTestimonials = async () => {
     try {
-      const res = await axios.get(
-        "https://src-website-api.onrender.com/api/v1/testimonials"
-      );
+      const res = await axios.get(getAllTestimonialsApi);
       setTestimonials(res.data);
     } catch (e) {
       console.log(e);
