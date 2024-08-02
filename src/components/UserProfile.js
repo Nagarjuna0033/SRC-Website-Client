@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import user, { loggedStatus } from "../features/user/user";
 import { setSnackBar } from "../features/snackbar/snackbar";
+import { CircularProgress } from "@mui/material";
 export default function UserProfile() {
   // getting username from navbar
 
@@ -16,6 +17,7 @@ export default function UserProfile() {
   const [icon, setIcon] = useState(true);
   const [edit, setEdit] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
+  const [loader, setLoader] = useState(false);
   // hook for navigating
 
   const navigate = useNavigate();
@@ -105,7 +107,7 @@ export default function UserProfile() {
       gfg: "",
       leetcode: "",
       github: "",
-      id: "",
+
       linkedin: "",
       role: userInfo && userInfo.role,
     },
@@ -122,6 +124,7 @@ export default function UserProfile() {
     const formData = new FormData();
     formData.append("image", profileFormik.values.image);
     try {
+      setLoader(true);
       console.log(profileFormik.values);
       const res = await axios.put(
         `${updateUserInfoApi}${formik.values._id}`,
@@ -137,10 +140,11 @@ export default function UserProfile() {
         getUser();
       dispatch(
         setSnackBar({
-          message: "Successfully updated Profile Pic",
+          message: "Successfully updated Profile Picture",
           variant: "success",
         })
       );
+      setLoader(false);
       profileFormik.resetForm();
     } catch (e) {
       dispatch(
@@ -151,12 +155,14 @@ export default function UserProfile() {
       );
       profileFormik.resetForm();
       console.log(e);
+      setLoader(false);
     }
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!icon) {
       try {
+        setLoader(true);
         const res = await axios.put(
           updateUserInfoApi + formik.values._id,
           formik.values
@@ -176,6 +182,7 @@ export default function UserProfile() {
             variant: "success",
           })
         );
+        setLoader(false);
         getUser();
       } catch (e) {
         dispatch(
@@ -185,9 +192,11 @@ export default function UserProfile() {
           })
         );
       }
+      setLoader(false);
     } else {
       setEdit(!edit);
       setIcon(!icon);
+      setLoader(false);
     }
   };
   const isValidUrl = (string) => {
@@ -225,8 +234,19 @@ export default function UserProfile() {
                     clip-rule="evenodd"
                   />
                 </svg>
+              ) : loader ? (
+                <button className="submit-message" disabled={loader}>
+                  <CircularProgress size={27} sx={{ color: "#022368" }} />
+                </button>
               ) : (
-                <button onClick={handleProfilePic}>Save</button>
+                <button
+                  onClick={handleProfilePic}
+                  disabled={loader}
+                  className="submit-message"
+                >
+                  {" "}
+                  Save
+                </button>
               )}
             </div>
             <div className="profile-name">{name}</div>
@@ -261,7 +281,17 @@ export default function UserProfile() {
                     accept="image/*"
                   />
                 </form>
-                <button onClick={handleSubmit} id="edit-btn">
+                {/* <button
+                  className="submit-message"
+                  type="submit"
+                  disabled={loader}
+                ></button> */}
+                <button
+                  onClick={handleSubmit}
+                  disabled={loader}
+                  id="edit-btn"
+                  className="submit-message"
+                >
                   {icon ? (
                     <svg
                       viewBox="0 0 24 24"
@@ -274,6 +304,14 @@ export default function UserProfile() {
                         clip-rule="evenodd"
                       />
                     </svg>
+                  ) : loader ? (
+                    <button
+                      disabled={loader}
+                      className="submit-message"
+                      id="edit-btn"
+                    >
+                      <CircularProgress size={27} sx={{ color: "#022368" }} />
+                    </button>
                   ) : (
                     "Save"
                   )}
@@ -291,20 +329,6 @@ export default function UserProfile() {
                     required
                     value={formik.values.name}
                     onChange={formik.handleChange}
-                    style={edit ? { cursor: "not-allowed" } : {}}
-                  />
-                </div>
-              </div>
-              <div className="profile-details-item">
-                <div className="profile-input-field">
-                  <label htmlFor="ID">ID</label>
-                  <input
-                    type="text"
-                    value={formik.values.id}
-                    name="id"
-                    onChange={formik.handleChange}
-                    className="edit-inputs"
-                    disabled={edit}
                     style={edit ? { cursor: "not-allowed" } : {}}
                   />
                 </div>

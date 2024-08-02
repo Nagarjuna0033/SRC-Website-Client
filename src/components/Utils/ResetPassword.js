@@ -100,6 +100,7 @@ export default function ResetPassword() {
           variant: "success",
         })
       );
+      setLoader(false);
       navigate("/");
     } catch (e) {
       setLoader(false);
@@ -213,13 +214,17 @@ export default function ResetPassword() {
               </svg>
             )}
           </div>
-          {loader ? (
-            <button className="submit-message" disabled={loader}>
+          <button
+            className="submit-message"
+            style={{ height: "3rem" }}
+            disabled={loader}
+          >
+            {loader ? (
               <circularProgress size={27} sx={{ color: "#022368" }} />
-            </button>
-          ) : (
-            <button className="submit-message">Update Password</button>
-          )}
+            ) : (
+              "Update Password"
+            )}
+          </button>
         </form>
       </div>
     </>
