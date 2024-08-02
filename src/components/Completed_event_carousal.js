@@ -2,7 +2,7 @@ import React from "react";
 import carousalImg1 from "../assets/images/carousal-1.jpg";
 import carousalImg2 from "../assets/images/carousal-2.jpg";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 const images = [carousalImg1, carousalImg2, carousalImg1];
 export default function Eventcarousal() {
   return (
