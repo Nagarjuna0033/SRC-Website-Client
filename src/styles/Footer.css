@@ -50,26 +50,26 @@
   align-items: center;
   justify-content: center;
 }
-.social_icons:nth-child(1):hover {
+.instagram-icon:hover {
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
   fill: black;
 }
-.social_icons:nth-child(2):hover {
+.linkedin-icon:hover {
   background: rgb(36, 109, 217);
   fill: white;
 }
-.social_icons:nth-child(3):hover {
+/* .social_icons:nth-child(3):hover {
   background: rgb(2, 72, 175);
   fill: white;
-}
-.social_icons:nth-child(4):hover {
+} */
+.github-icon:hover {
   background: black;
   fill: white;
 }
-.social_icons:nth-child(5):hover {
+/* .social_icons:nth-child(5):hover {
   background: black;
   fill: white;
-}
+} */
 #copyright > p > svg {
   margin: 2px;
   height: 15px;
