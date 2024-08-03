@@ -90,19 +90,7 @@ export default function DomainForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (formik.errors.name) {
-      document.getElementById("domain-name").style.border = "1px solid red";
-    }
-    if (formik.errors.description) {
-      document.getElementById("domain-desc").style.border = "1px solid red";
-    }
-    if (!formik.errors.name && !formik.errors.description) {
-      document.getElementById("domain-name").style.border = "none";
-      document.getElementById("domain-desc").style.border = "none";
-
       addDomain(formik.values);
-    }
   };
 
   // Function for Adding Domain
@@ -363,7 +351,7 @@ export default function DomainForm() {
                 required
                 value={formik.values.image}
                 name="image"
-                placeholder="Domain Name"
+                placeholder="Domain Image"
                 onChange={formik.handleChange}
               />
               <textarea
